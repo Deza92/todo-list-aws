@@ -186,16 +186,16 @@ class TestApi(unittest.TestCase):
         self.assertEqual(
             jsonbody['text'], "Integration text example - Initial", "Error en la petición API a {url}"
         )
-        #Delete TODO to restore state
+        # Delete TODO to restore state
         response = requests.delete(url + '/' + ID_TODO)
         self.assertEqual(
             response.status_code, 200, "Error en la petición API a {url}"
         )
         print ('Response Delete Todo:' + str(response))
-        #Test GET TODO
+        # Test GET TODO
         url = BASE_URL+"/todos/"+ID_TODO
         response = requests.get(url)
-        print('Response Get Todo '+ url+': '+ str(response))
+        print('Response Get Todo ' + url+': ' + str(response))
         self.assertEqual(
             response.status_code, 404, "Error en la petición API a {url}"
         )
