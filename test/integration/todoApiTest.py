@@ -30,7 +30,7 @@ class TestApi(unittest.TestCase):
         }
         response = requests.post(url, data=json.dumps(data))
         json_response = response.json()
-        print('Response Add Todo: '+ str(json_response))
+        print('Response Add Todo: ' + str(json_response))
         jsonbody = json.loads(json_response['body'])
         ID_TODO = jsonbody['id']
         print ('ID todo:'+ID_TODO)
@@ -38,7 +38,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            jsonbody['text'], "Integration text example", 
+            jsonbody['text'], "Integration text example",
             "Error en la petición API a {url}"
         )
         # List
@@ -49,8 +49,8 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertTrue(response.json())
-        
         print('End - integration test List TODO')
+
     def test_api_addtodo(self):
         print('---------------------------------------')
         print('Starting - integration test Add TODO')
@@ -68,7 +68,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         self.assertEqual(
-            jsonbody['text'], "Integration text example", 
+            jsonbody['text'], "Integration text example",
             "Error en la petición API a {url}"
         )
         url = url+"/"+ID_TODO
@@ -77,6 +77,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         print('End - integration test Add TODO')
+
     def test_api_gettodo(self):
         print('---------------------------------------')
         print('Starting - integration test Get TODO')
@@ -116,7 +117,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         print('End - integration test Get TODO')
-    
+
     def test_api_updatetodo(self):
         print('---------------------------------------')
         print('Starting - integration test Update TODO')
@@ -173,6 +174,7 @@ class TestApi(unittest.TestCase):
             response.status_code, 200, "Error en la petición API a {url}"
         )
         print('End - integration test Update TODO')
+
     def test_api_deletetodo(self):
         print('---------------------------------------')
         print('Starting - integration test Delete TODO')

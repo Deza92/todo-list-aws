@@ -102,7 +102,7 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-        
+
     def test_list_todo(self):
         print ('---------------------')
         print ('Start: test_list_todo')
@@ -118,7 +118,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertTrue(result[0]['text'] == self.text)
         print ('End: test_list_todo')
 
-
     def test_update_todo(self):
         print ('---------------------')
         print ('Start: test_update_todo')
@@ -132,13 +131,10 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('Response PutItem' + str(responsePut))
         idItem = json.loads(responsePut['body'])['id']
         print ('Id item:' + idItem)
-        result = update_item(idItem, updated_text,
-                            "false",
-                            self.dynamodb)
+        result = update_item(idItem, updated_text, "false", self.dynamodb)
         print ('Result Update Item:' + str(result))
         self.assertEqual(result['text'], updated_text)
         print ('End: test_update_todo')
-
 
     def test_update_todo_error(self):
         print ('---------------------')
