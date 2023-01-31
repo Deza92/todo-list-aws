@@ -201,6 +201,14 @@ class TestDatabaseFunctions(unittest.TestCase):
         item = get_item(None)
         print ('Item name:' + item.name)
         print ('End: test_get_item')
+        
+    def test_get_table(self):
+        print ('---------------------')
+        print ('Start: test_get_table')
+        from src.todoList import get_table
+        table = get_table(None)
+        print ('Table name:' + table.name)
+        print ('End: test_get_table')
 
 if __name__ == '__main__':
     unittest.main()
