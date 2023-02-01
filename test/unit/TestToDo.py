@@ -194,5 +194,45 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertRaises(TypeError, delete_item("", self.dynamodb))
         print ('End: test_delete_todo_error')
         
+        def test_get_item(self):
+        print ('---------------------')
+        print ('Start: test_get_item')
+        from src.todoList import get_item
+        item = get_item(None)
+        print ('Item name:' + item.name)
+        print ('End: test_get_item')
+    
+    def test_get_items(self):
+        print ('---------------------')
+        print ('Start: test_gest_item')
+        from src.todoList import get_items
+        items = get_items(None)
+        print ('Items name:' + items.name)
+        print ('End: test_get_items')
+        
+    def test_delete_table_error(self):
+        print ('---------------------')
+        print ('Start: test_delete_table_error')
+        from src.todoList import delete_table
+        # Testing file functions
+        self.assertRaises(TypeError, delete_table("", self.dynamodb))
+        print ('End: test_delete_table_error')
+
+    def test_put_item(self):
+        print ('---------------------')
+        print ('Start: test_put_item')
+        from src.todoList import put_item
+        item = put_item(None)
+        print ('Item name:' + item.name)
+        print ('End: test_put_item')
+        
+    def test_delete_item(self):
+        print ('---------------------')
+        print ('Start: test_delete_item')
+        from src.todoList import delete_item
+        item = delete_item(None)
+        print ('Item name:' + item.name)
+        print ('End: test_delete_item')
+        
 if __name__ == '__main__':
     unittest.main()
