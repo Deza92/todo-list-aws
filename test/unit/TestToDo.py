@@ -210,5 +210,13 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertRaises(TypeError, delete_table("", self.dynamodb))
         print ('End: test_delete_table_error')
         
+    def test_delete_item(self):
+        print ('---------------------')
+        print ('Start: test_delete_item')
+        from src.todoList import delete_item
+        item = delete_item(None)
+        print ('Item name:' + item.name)
+        print ('End: test_delete_item')
+        
 if __name__ == '__main__':
     unittest.main()
