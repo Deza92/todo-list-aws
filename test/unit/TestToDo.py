@@ -217,6 +217,14 @@ class TestDatabaseFunctions(unittest.TestCase):
         item = delete_item(None)
         print ('Item name:' + item.name)
         print ('End: test_delete_item')
+    
+    def test_delete_table(self):
+        print ('---------------------')
+        print ('Start: test_delete_table')
+        from src.todoList import delete_table
+        table = delete_table(None)
+        print ('Item name:' + table.name)
+        print ('End: test_delete_table')
         
 if __name__ == '__main__':
     unittest.main()
