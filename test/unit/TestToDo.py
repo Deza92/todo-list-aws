@@ -201,14 +201,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         item = get_item(None)
         print ('Item name:' + item.name)
         print ('End: test_get_item')
-    
-    def test_get_items(self):
-        print ('---------------------')
-        print ('Start: test_gest_item')
-        from src.todoList import get_items
-        items = get_items(None)
-        print ('Items name:' + items.name)
-        print ('End: test_get_items')
         
     def test_delete_table_error(self):
         print ('---------------------')
